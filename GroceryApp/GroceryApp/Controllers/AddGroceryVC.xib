@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddGroceryVC" customModule="GroceryApp" customModuleProvider="target">
+            <connections>
+                <outlet property="groceryImageView" destination="2Mv-bu-qky" id="fL4-LG-daA"/>
+                <outlet property="searchBar" destination="tLN-bs-0mG" id="hJa-SV-UsX"/>
+                <outlet property="searchTableview" destination="0Wx-GK-92s" id="Fwp-dt-48x"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tLN-bs-0mG" customClass="ImageTextField" customModule="GroceryApp" customModuleProvider="target">
+                    <rect key="frame" x="20" y="36" width="335" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Wx-GK-92s">
+                    <rect key="frame" x="20" y="66" width="335" height="150"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="deL-7X-BE1"/>
+                    </constraints>
+                </tableView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="2Mv-bu-qky">
+                    <rect key="frame" x="70" y="232" width="235" height="235"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="2Mv-bu-qky" secondAttribute="height" multiplier="1:1" id="uc3-Jg-bZG"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add an Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqP-O5-hle">
+                    <rect key="frame" x="135" y="483" width="105" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0Wx-GK-92s" firstAttribute="trailing" secondItem="tLN-bs-0mG" secondAttribute="trailing" id="0op-RA-jmb"/>
+                <constraint firstItem="tLN-bs-0mG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="15O-Bd-lar"/>
+                <constraint firstItem="BqP-O5-hle" firstAttribute="top" secondItem="2Mv-bu-qky" secondAttribute="bottom" constant="16" id="8Xw-4L-qi2"/>
+                <constraint firstItem="2Mv-bu-qky" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="8jN-DD-WAa"/>
+                <constraint firstItem="2Mv-bu-qky" firstAttribute="width" secondItem="0Wx-GK-92s" secondAttribute="width" constant="-100" id="PT4-ho-SxO"/>
+                <constraint firstItem="0Wx-GK-92s" firstAttribute="top" secondItem="tLN-bs-0mG" secondAttribute="bottom" id="SAC-kx-8dt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tLN-bs-0mG" secondAttribute="trailing" constant="20" id="TQu-Sb-6x5"/>
+                <constraint firstItem="BqP-O5-hle" firstAttribute="centerX" secondItem="2Mv-bu-qky" secondAttribute="centerX" id="aAK-ky-x80"/>
+                <constraint firstItem="0Wx-GK-92s" firstAttribute="leading" secondItem="tLN-bs-0mG" secondAttribute="leading" id="dcd-LG-aLN"/>
+                <constraint firstItem="2Mv-bu-qky" firstAttribute="top" secondItem="0Wx-GK-92s" secondAttribute="bottom" constant="16" id="fD0-wb-A6v"/>
+                <constraint firstItem="tLN-bs-0mG" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="nNG-Zl-CrS"/>
+                <constraint firstItem="tLN-bs-0mG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="wJG-4B-IeL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="145.27736131934034"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="plus" width="100" height="100"/>
+    </resources>
+</document>

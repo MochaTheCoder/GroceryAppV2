@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroceriesVC" customModule="GroceryApp" customModuleProvider="target">
             <connections>
-                <outlet property="addButton" destination="tXK-J7-fAK" id="E3j-ZT-4L1"/>
-                <outlet property="filterButton" destination="m2I-LY-95Y" id="1wc-HL-6Wv"/>
                 <outlet property="tableView" destination="vBu-hz-J4S" id="hFI-9X-siR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,26 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vBu-hz-J4S">
-                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCf-Nw-JE2">
-                    <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                    <items>
-                        <navigationItem title="Groceries" id="zin-uV-AMg">
-                            <barButtonItem key="leftBarButtonItem" systemItem="organize" id="m2I-LY-95Y"/>
-                            <barButtonItem key="rightBarButtonItem" systemItem="add" id="tXK-J7-fAK"/>
-                        </navigationItem>
-                    </items>
-                </navigationBar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="dCf-Nw-JE2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="CeI-Un-oqc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dCf-Nw-JE2" secondAttribute="trailing" id="DNX-bC-GOd"/>
-                <constraint firstItem="vBu-hz-J4S" firstAttribute="top" secondItem="dCf-Nw-JE2" secondAttribute="bottom" id="OKs-tU-9ZJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vBu-hz-J4S" secondAttribute="trailing" id="Pqb-LT-rAO"/>
-                <constraint firstItem="dCf-Nw-JE2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QiL-Kw-je7"/>
+                <constraint firstItem="vBu-hz-J4S" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="TKc-eQ-hJf"/>
                 <constraint firstItem="vBu-hz-J4S" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eQQ-Yf-RIV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vBu-hz-J4S" secondAttribute="bottom" id="tBD-U6-jkk"/>
             </constraints>

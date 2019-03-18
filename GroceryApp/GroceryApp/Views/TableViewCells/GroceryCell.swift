@@ -9,13 +9,23 @@
 import UIKit
 
 class GroceryCell: UITableViewCell {
-    @IBOutlet weak var groceryImageVIew: UIImageView!
-    @IBOutlet weak var groceryName: UILabel!
-    @IBOutlet weak var groceryQuantity: UILabel!
+
+    @IBOutlet private weak var groceryImageVIew: UIImageView!
+    @IBOutlet private weak var groceryNameLabel: UILabel!
+
+    var grocery: Grocery?
     
     func configure(grocery: Grocery) {
-        self.groceryImageVIew.image = grocery.image
-        self.groceryName.text = grocery.name
-        self.groceryQuantity.text = String(grocery.quantity)
+        guard let groceryName = grocery.name else { return }
+        groceryImageVIew.image = nil
+        self.grocery = grocery
+        if grocery.status == .crossedOff {
+            let attributedString = NSMutableAttributedString(string: groceryName)
+            attributedString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: 2, range: NSMakeRange(0, attributedString.length))
+            groceryNameLabel.attributedText = attributedString
+        } else {
+            groceryNameLabel.attributedText = nil
+            groceryNameLabel.text = grocery.name
+        }
     }
 }

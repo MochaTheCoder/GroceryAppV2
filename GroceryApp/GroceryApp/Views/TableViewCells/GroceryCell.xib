@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,27 +32,18 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goV-B4-TbL">
-                        <rect key="frame" x="272" y="25" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="KGv-SO-nOD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2ju-E4-akk"/>
-                    <constraint firstAttribute="trailing" secondItem="goV-B4-TbL" secondAttribute="trailing" constant="16" id="Qwm-Hw-MVk"/>
                     <constraint firstItem="KGv-SO-nOD" firstAttribute="leading" secondItem="noN-t7-QOW" secondAttribute="trailing" constant="8" id="Zbt-tV-a3Y"/>
                     <constraint firstItem="noN-t7-QOW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eAR-FQ-YBF"/>
-                    <constraint firstItem="goV-B4-TbL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ncR-HD-Vxi"/>
                     <constraint firstItem="noN-t7-QOW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="szi-cO-c49"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="groceryImageVIew" destination="noN-t7-QOW" id="oqK-Oa-ASY"/>
-                <outlet property="groceryName" destination="KGv-SO-nOD" id="Zsp-qY-zFj"/>
-                <outlet property="groceryQuantity" destination="goV-B4-TbL" id="4sN-mG-PRj"/>
+                <outlet property="groceryNameLabel" destination="KGv-SO-nOD" id="dQs-Xj-rb1"/>
             </connections>
             <point key="canvasLocation" x="39" y="36.5"/>
         </tableViewCell>

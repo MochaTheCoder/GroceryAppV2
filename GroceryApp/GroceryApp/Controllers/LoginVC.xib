@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC" customModule="GroceryApp" customModuleProvider="target">
             <connections>
                 <outlet property="loginButton" destination="OQB-mC-A18" id="gMe-fj-oOy"/>
+                <outlet property="registerButton" destination="rT4-gR-3Co" id="Tuv-Di-JE5"/>
                 <outlet property="usernamePassword" destination="ub9-ZW-xw0" id="8Ub-Hk-LaF"/>
                 <outlet property="usernameTextField" destination="pJt-eL-7ZS" id="fYA-4F-qfp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -47,9 +48,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQB-mC-A18">
-                    <rect key="frame" x="168" y="427" width="38" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQB-mC-A18">
+                    <rect key="frame" x="249" y="426" width="38" height="30"/>
                     <state key="normal" title="Login"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rT4-gR-3Co">
+                    <rect key="frame" x="168" y="426" width="57" height="30"/>
+                    <state key="normal" title="Register"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,10 +63,12 @@
                 <constraint firstItem="pJt-eL-7ZS" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="7p0-82-vc2"/>
                 <constraint firstItem="ub9-ZW-xw0" firstAttribute="top" secondItem="pJt-eL-7ZS" secondAttribute="bottom" constant="15.5" id="92q-RZ-N6x"/>
                 <constraint firstItem="XjH-Kf-fX7" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Cbu-Q0-INl"/>
+                <constraint firstItem="rT4-gR-3Co" firstAttribute="top" secondItem="ub9-ZW-xw0" secondAttribute="bottom" constant="22" id="G2L-db-v5f"/>
+                <constraint firstItem="OQB-mC-A18" firstAttribute="trailing" secondItem="ub9-ZW-xw0" secondAttribute="trailing" id="Hfg-qb-6a5"/>
                 <constraint firstItem="pJt-eL-7ZS" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="NiD-Ky-JUA"/>
                 <constraint firstItem="pJt-eL-7ZS" firstAttribute="top" secondItem="XjH-Kf-fX7" secondAttribute="bottom" constant="37" id="VHh-mw-lH3"/>
                 <constraint firstItem="OQB-mC-A18" firstAttribute="top" secondItem="ub9-ZW-xw0" secondAttribute="bottom" constant="23" id="asR-IA-Bw6"/>
-                <constraint firstItem="OQB-mC-A18" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="gGy-NL-HC9"/>
+                <constraint firstItem="OQB-mC-A18" firstAttribute="leading" secondItem="rT4-gR-3Co" secondAttribute="trailing" constant="24" id="uHE-iA-okf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
