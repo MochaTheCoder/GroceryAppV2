@@ -16,11 +16,10 @@ class GroceryCell: UITableViewCell {
     var grocery: Grocery?
     
     func configure(grocery: Grocery) {
-        guard let groceryName = grocery.name else { return }
         groceryImageVIew.image = nil
         self.grocery = grocery
         if grocery.status == .crossedOff {
-            let attributedString = NSMutableAttributedString(string: groceryName)
+            let attributedString = NSMutableAttributedString(string: grocery.name ?? "")
             attributedString.addAttribute(NSAttributedStringKey.strikethroughStyle, value: 2, range: NSMakeRange(0, attributedString.length))
             groceryNameLabel.attributedText = attributedString
         } else {

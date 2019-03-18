@@ -41,7 +41,7 @@ class GroceriesVC: UIViewController {
         Grocery.fetchGroceries { [weak self] (groceries, crossedGroceries, error) in
             guard let self = self else { return }
             if let error = error {
-                // present error
+                self.present(error: error)
             } else {
                 self.groceries = groceries
                 self.crossedOffGroceries = crossedGroceries
@@ -92,7 +92,7 @@ extension GroceriesVC: UITableViewDataSource {
         alert.addAction(UIAlertAction(title: "Confirm", style: .destructive, handler: { (_) in
             Grocery.batchDelete(crossedGroceries: self.crossedOffGroceries, completionHandler: { (error) in
                 if let error = error {
-                    // present errror
+                    self.present(error: error)
                 } else {
                     self.crossedOffGroceries = []
                     self.tableView.reloadData()
@@ -105,7 +105,9 @@ extension GroceriesVC: UITableViewDataSource {
 
 extension GroceriesVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let groceryCell = tableView.cellForRow(at: indexPath) as? GroceryCell, let grocery = groceryCell.grocery else { return }
+        guard let groceryCell = tableView.cellForRow(at: indexPath) as? GroceryCell,
+            let grocery = groceryCell.grocery
+            else { return }
         if grocery.status == .normal {
             grocery.status = .crossedOff
             groceries.remove(at: indexPath.row)
@@ -115,7 +117,8 @@ extension GroceriesVC: UITableViewDelegate {
             crossedOffGroceries.remove(at: indexPath.row)
             groceries.append(grocery)
         }
-        Network.database.child("Grocery").child(grocery.id).updateChildValues(["status": grocery.status.rawValue])
+
+        Network.database.child("Grocery").child(grocery.getId()).updateChildValues(["status": grocery.status.rawValue])
         tableView.reloadData()
 
     }
@@ -126,16 +129,17 @@ extension GroceriesVC: UITableViewDelegate {
             let section = GrocerySections.init(rawValue: indexPath.section) else { return nil }
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, index in
             Grocery.delete(grocery: grocery, completionHandler: { (error) in
-                if error != nil {
-                    // present error
+                if let error = error {
+                    self.present(error: error)
+                } else {
+                    switch section {
+                    case .normal:
+                        self.groceries.remove(at: indexPath.row)
+                    case .crossed:
+                        self.crossedOffGroceries.remove(at: indexPath.row)
+                    }
+                    tableView.reloadData()
                 }
-                switch section {
-                case .normal:
-                    self.groceries.remove(at: indexPath.row)
-                case .crossed:
-                    self.crossedOffGroceries.remove(at: indexPath.row)
-                }
-                tableView.reloadData()
             })
         }
         return [delete]

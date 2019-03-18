@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		79055ECA1D8E6BBDB5A3EA46 /* Pods_GroceryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECDEB1870A865CFD6B2A704 /* Pods_GroceryApp.framework */; };
+		AB12FAE3223F3714004649FE /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12FAE2223F3714004649FE /* Group.swift */; };
 		AB2F89D9223F246F000639F5 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2F89D8223F246F000639F5 /* CustomError.swift */; };
+		AB2F89DD223F2E2D000639F5 /* UIViewController+GroceryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2F89DC223F2E2D000639F5 /* UIViewController+GroceryApp.swift */; };
+		AB2F89E0223F3524000639F5 /* AddGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2F89DE223F3524000639F5 /* AddGroupVC.swift */; };
+		AB2F89E1223F3524000639F5 /* AddGroupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2F89DF223F3524000639F5 /* AddGroupVC.xib */; };
 		AB67343B21D6C909003F5011 /* UIColor+GroceryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB67343A21D6C909003F5011 /* UIColor+GroceryApp.swift */; };
 		AB7DE1F921057FED00ED1C93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7DE1F821057FED00ED1C93 /* AppDelegate.swift */; };
 		AB7DE20021057FEE00ED1C93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB7DE1FF21057FEE00ED1C93 /* Assets.xcassets */; };
@@ -56,7 +60,11 @@
 		36E32AF2BC2988E54A39349D /* Pods-GroceryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroceryApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroceryApp/Pods-GroceryApp.debug.xcconfig"; sourceTree = "<group>"; };
 		556B4D98CF7FE172A0ED492D /* Pods_GroceryAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroceryAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC008442124A8BF877D84D5 /* Pods-GroceryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroceryApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroceryApp/Pods-GroceryApp.release.xcconfig"; sourceTree = "<group>"; };
+		AB12FAE2223F3714004649FE /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		AB2F89D8223F246F000639F5 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		AB2F89DC223F2E2D000639F5 /* UIViewController+GroceryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+GroceryApp.swift"; sourceTree = "<group>"; };
+		AB2F89DE223F3524000639F5 /* AddGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupVC.swift; sourceTree = "<group>"; };
+		AB2F89DF223F3524000639F5 /* AddGroupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddGroupVC.xib; sourceTree = "<group>"; };
 		AB67343A21D6C909003F5011 /* UIColor+GroceryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+GroceryApp.swift"; sourceTree = "<group>"; };
 		AB7DE1F521057FED00ED1C93 /* GroceryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7DE1F821057FED00ED1C93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +133,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AB12FAE4223F3FE3004649FE /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
 		AB7DE1EC21057FED00ED1C93 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +165,7 @@
 		AB7DE1F721057FED00ED1C93 /* GroceryApp */ = {
 			isa = PBXGroup;
 			children = (
+				AB12FAE4223F3FE3004649FE /* Datasource */,
 				ABEF88C921852C2000D773CE /* Extensions */,
 				AB7DE2342105893000ED1C93 /* Models */,
 				AB7DE22B2105849700ED1C93 /* Views */,
@@ -193,6 +209,8 @@
 				AB7DE23D210592F400ED1C93 /* GroupVC.xib */,
 				ABEF88B82185192300D773CE /* AddGroceryVC.swift */,
 				ABEF88B92185192300D773CE /* AddGroceryVC.xib */,
+				AB2F89DE223F3524000639F5 /* AddGroupVC.swift */,
+				AB2F89DF223F3524000639F5 /* AddGroupVC.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -209,8 +227,10 @@
 		AB7DE2342105893000ED1C93 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AB2F89D8223F246F000639F5 /* CustomError.swift */,
 				AB8AB6FB210ECE7600D61C0F /* Network */,
 				AB7DE2352105894100ED1C93 /* Grocery.swift */,
+				AB12FAE2223F3714004649FE /* Group.swift */,
 				ABEF88CC21852DA400D773CE /* FirebaseModel.swift */,
 			);
 			path = Models;
@@ -229,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				AB8AB6FC210ECE8400D61C0F /* Network.swift */,
-				AB2F89D8223F246F000639F5 /* CustomError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -247,6 +266,7 @@
 			children = (
 				ABEF88CA21852C2E00D773CE /* Date+GroceryApp.swift */,
 				AB67343A21D6C909003F5011 /* UIColor+GroceryApp.swift */,
+				AB2F89DC223F2E2D000639F5 /* UIViewController+GroceryApp.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -369,6 +389,7 @@
 				AB7DE22F210584FB00ED1C93 /* GroceriesVC.xib in Resources */,
 				AB8AB6FF210ED34200D61C0F /* GoogleService-Info.plist in Resources */,
 				AB7DE20021057FEE00ED1C93 /* Assets.xcassets in Resources */,
+				AB2F89E1223F3524000639F5 /* AddGroupVC.xib in Resources */,
 				AB7DE23B21058AAB00ED1C93 /* GroceryCell.xib in Resources */,
 				AB7DE23F210592F400ED1C93 /* GroupVC.xib in Resources */,
 				AB7DE229210582CD00ED1C93 /* LoginVC.xib in Resources */,
@@ -444,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABEF88CD21852DA400D773CE /* FirebaseModel.swift in Sources */,
+				AB12FAE3223F3714004649FE /* Group.swift in Sources */,
 				AB7DE23E210592F400ED1C93 /* GroupVC.swift in Sources */,
 				ABEF88C621851F4800D773CE /* ImageTextField.swift in Sources */,
 				AB7DE232210586DA00ED1C93 /* ProfileVC.swift in Sources */,
@@ -453,9 +475,11 @@
 				AB2F89D9223F246F000639F5 /* CustomError.swift in Sources */,
 				ABEF88BA2185192300D773CE /* AddGroceryVC.swift in Sources */,
 				ABEF88CB21852C2E00D773CE /* Date+GroceryApp.swift in Sources */,
+				AB2F89E0223F3524000639F5 /* AddGroupVC.swift in Sources */,
 				AB7DE228210582CD00ED1C93 /* LoginVC.swift in Sources */,
 				AB7DE22E210584FB00ED1C93 /* GroceriesVC.swift in Sources */,
 				AB67343B21D6C909003F5011 /* UIColor+GroceryApp.swift in Sources */,
+				AB2F89DD223F2E2D000639F5 /* UIViewController+GroceryApp.swift in Sources */,
 				AB7DE2362105894100ED1C93 /* Grocery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

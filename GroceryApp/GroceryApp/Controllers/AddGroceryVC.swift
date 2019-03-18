@@ -24,8 +24,7 @@ class AddGroceryVC: UIViewController {
 
     @objc func addButtonPressed() {
         if let name = searchBar.text {
-            var newGrocery = NewGrocery(name: name)
-            Grocery.createNew(grocery: &newGrocery) { (grocery, error) in
+            Grocery.createNew(grocery: Grocery(name: name)) { (grocery, error) in
                 print(grocery)
             }
             searchBar.text = ""

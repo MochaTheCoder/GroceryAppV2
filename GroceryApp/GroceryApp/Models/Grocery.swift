@@ -16,34 +16,17 @@ enum GroceryStatus: Int {
     case deleted
 }
 
-struct NewGrocery {
-    var id: String?
-    var name: String
-
-    var imageUrl: String?
-
-    init(name: String, imageUrl: String? = nil) {
-        self.name = name
-        self.imageUrl = imageUrl
-    }
-}
-
 class Grocery: FirebaseModel {
 
     var name: String?
     var imageUrl: String?
     var status: GroceryStatus = .normal
 
-    convenience init(newGrocery: NewGrocery) {
-        guard let id = newGrocery.id else { fatalError("Must give newGrocery autoref key") }
-        self.init(id: id)
-        name = newGrocery.name
-        imageUrl = newGrocery.imageUrl
+    init(name: String) {
+        self.name = name
     }
 
-    required init(id: String) {
-        super.init(id: id)
-    }
+    required init() {}
 
     override func createDict() -> [String : Any] {
         var dict = super.createDict()
@@ -95,10 +78,9 @@ extension Grocery {
         }
     }
 
-    static func createNew(grocery: inout NewGrocery, completionHandler: @escaping((Grocery?, Error?) -> Void)) {
+    static func createNew(grocery: Grocery, completionHandler: @escaping((Grocery?, Error?) -> Void)) {
         let newRef = Network.database.child("Grocery").childByAutoId()
-        grocery.id = newRef.key
-        let grocery = Grocery(newGrocery: grocery)
+        grocery.setId(newRef.key)
         newRef.setValue(grocery.createDict()) { (error, ref) in
             if error == nil {
                 completionHandler(grocery, nil)
@@ -109,7 +91,7 @@ extension Grocery {
     }
 
     static func delete(grocery: Grocery, completionHandler: @escaping(Error?) -> Void) {
-        let ref = Network.database.child("Grocery").child(grocery.id)
+        let ref = Network.database.child("Grocery").child(grocery.getId())
         ref.updateChildValues(["status": GroceryStatus.deleted.rawValue]) { (error, _) in
             completionHandler(.firebaseError)
         }
@@ -118,7 +100,7 @@ extension Grocery {
     static func batchDelete(crossedGroceries: [Grocery], completionHandler: @escaping(Error?) -> Void) {
         var deletedRefsQueue = Set<String>()
         for grocery in crossedGroceries {
-            let ref = Network.database.child("Grocery").child(grocery.id)
+            let ref = Network.database.child("Grocery").child(grocery.getId())
             deletedRefsQueue.insert(ref.key)
             ref.updateChildValues(["status": GroceryStatus.deleted.rawValue]) { (error, ref) in
                 if error != nil {

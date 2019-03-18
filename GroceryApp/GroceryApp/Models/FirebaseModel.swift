@@ -11,11 +11,20 @@ import FirebaseAuth
 
 class FirebaseModel {
 
-    var id: String
+    private var id: String?
     var creationDate = Date().isoString
     var creatorId: String = Auth.auth().currentUser?.uid ?? ""
     
-    required init(id: String) {
+    required init() {}
+
+    func getId() -> String {
+        guard let id = id else {
+            fatalError("id is never set. Create a new childByAutoId before adding to firebase")
+        }
+        return id
+    }
+
+    func setId(_ id: String) {
         self.id = id
     }
     
@@ -35,7 +44,7 @@ class FirebaseModel {
 
     class func createNew<T: FirebaseModel>(objectJson: (objectId: String, value: Any)) -> T? {
         guard let objectDict = objectJson.value as? [String: Any] else { return nil }
-        let newT = T(id: objectJson.objectId)
+        let newT = T()
         newT.map(objectDict: objectDict)
         return newT
     }

@@ -12,16 +12,17 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
+    private var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let nav = UINavigationController(rootViewController: LoginVC())
-        window?.rootViewController = nav
-        window?.makeKeyAndVisible()
-        // Override point for customization after application launch.
         FirebaseApp.configure()
+        let auth = Auth.auth()
+        auth.addStateDidChangeListener { (_, user) in
+            let rootVC = user != nil ? GroceriesVC() : LoginVC()
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = UINavigationController(rootViewController: rootVC)
+            self.window?.makeKeyAndVisible()
+        }
         return true
     }
 
