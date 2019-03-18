@@ -46,6 +46,7 @@ class FirebaseModel {
         guard let objectDict = objectJson.value as? [String: Any] else { return nil }
         let newT = T()
         newT.map(objectDict: objectDict)
+        newT.id = objectJson.objectId
         return newT
     }
     
